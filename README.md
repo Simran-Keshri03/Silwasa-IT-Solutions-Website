@@ -6,96 +6,150 @@
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://silwasa-it-solutions-website.vercel.app/)
 [![Code Quality](https://img.shields.io/badge/Oxlint-1.89.0-10B981?style=for-the-badge&logo=oxc&logoColor=white)](https://oxc.rs/)
 
-> A modern, responsive corporate single-page web application engineered for **Silwasa IT Solutions** — featuring custom dark-mode aesthetics, CSS architecture, an accessible multi-column mega menu, interactive project carousels, and client-side form validation.
+> An enterprise-grade corporate Single Page Application (SPA) engineered for **Silwasa IT Solutions** — featuring a modern dark theme design system, deep service categorization, autonomous AI solutions showcase, Generative Engine Optimization (GEO/AEO/LLM SEO), interactive project galleries, case study modals, and accessible UI interactions.
 
 ---
 
 ## 🔗 Live Demo & Links
 
-- **🚀 Live Website:** [https://silwasa-it-solutions-website.vercel.app/](https://silwasa-it-solutions-website.vercel.app/)
-- **📬 Contact Section:** [https://silwasa-it-solutions-website.vercel.app/#contact](https://silwasa-it-solutions-website.vercel.app/#contact)
+- **🚀 Production Website:** [https://silwasa-it-solutions-website.vercel.app/](https://silwasa-it-solutions-website.vercel.app/)
 - **💻 GitHub Repository:** [https://github.com/Simran-Keshri03/Silwasa-IT-Solutions-Website](https://github.com/Simran-Keshri03/Silwasa-IT-Solutions-Website)
+- **📬 Contact & Consultation:** [https://silwasa-it-solutions-website.vercel.app/#contact](https://silwasa-it-solutions-website.vercel.app/#contact)
 
 ---
 
 ## 📖 Project Overview
 
-**Silwasa IT Solutions Website** is a Single Page Application (SPA) built using React 19 and Vite 8. Designed to showcase technology and digital marketing services, the application highlights agency capabilities in web engineering, mobile application development, UI/UX design, custom software architecture, and search engine optimization.
+**Silwasa IT Solutions Website** is a modern corporate web application built with **React 19** and **Vite 8**. Engineered with a bespoke dark-mode design system, the platform presents the company's full spectrum of software engineering, cloud architecture, mobile development, and modern AI search optimization capabilities.
 
-Key aspects of the implementation include:
-- **Design System:** Tailored dark theme (`#151414`, `#000000`) paired with primary purple (`#663399`) and high-contrast lime accents (`#D9F45F`).
-- **Enterprise Navigation:** A multi-tier dropdown Mega Menu system providing categorized deep links to capabilities, case studies, industries, and insights.
-- **Optimized Asset Pipeline:** Uses modern compressed graphic formats (`.webp`), responsive layout containers, and clean zero-warning builds.
+The codebase adheres to component modularity, clean architectural separation between presentation and data schemas, zero runtime warnings, and accessible interaction patterns.
+
+### Core Value & Brand Identity
+- **Primary Canvas & Surface:** Deep canvas (`#000000`) and elevated dark cards (`#151414`).
+- **Brand Palette:** Royal brand purple (`#663399`), deep gradient shadows (`#4F0996`), and signature lime accents (`#D9F45F`).
+- **Typography:** Contemporary geometric typography powered by [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans).
+- **Aesthetic Language:** Offset button shadows (`3px 3px 1px 0px #975DD1`), subtle border glows, and accessible hover states.
 
 ---
 
-## 📸 Website Preview
+## 📸 Screenshots & UI Preview
 
-A live interactive preview is accessible directly at **[silwasa-it-solutions-website.vercel.app](https://silwasa-it-solutions-website.vercel.app/)**.
+| Section | Preview Status |
+| :--- | :--- |
+| **Hero & Navigation** | `[Screenshot Placeholder: Hero Section & Navigation]` |
+| **AI Solutions & GEO Showcase** | `[Screenshot Placeholder: AI Solutions & GEO Showcase]` |
+| **10-Pillar Services Ecosystem** | `[Screenshot Placeholder: Services Ecosystem Explorer]` |
+| **Project Portfolio & Case Studies** | `[Screenshot Placeholder: Portfolio Gallery & Case Study Modal]` |
+| **Pricing & 8-Step Agile Delivery** | `[Screenshot Placeholder: 8-Step Agile Process & Packages]` |
+| **Contact & 9-Group Sitemap Footer** | `[Screenshot Placeholder: Contact Form & Sitemap Footer]` |
 
 > [!NOTE]
-> *(To display an image preview directly in this README, provide a preferred desktop/mobile screenshot file to include in the repository).*
+> *Screenshots are currently represented by placeholders until production captures are added to the repository. The live interface can be explored directly on the deployed site at [silwasa-it-solutions-website.vercel.app](https://silwasa-it-solutions-website.vercel.app/).*
 
 ---
 
-## ✨ Key Features
+## ✨ Key Features & Functional Modules
 
-### 1. 🧭 Advanced Mega Menu Navigation
-- **6 Dedicated Dropdown Panels:** Separate navigation menus for *About*, *Services*, *Case Studies*, *Industries*, *Portfolio*, and *Blog*.
-- **Left Feature Card:** Informational card on desktop containing category badge, overview description, and direct action link.
-- **Multi-Column Category Grids:** Organized 2- and 3-column layouts with inline vector SVG icons and concise descriptions for all 36 subcategories.
-- **Accessible Interactions:** Supports click-to-open, heading switching, active heading toggle-close, outside-click dismissal, <kbd>Escape</kbd> key listener, and keyboard focus states.
-- **Mobile Accordion:** Adapts into a touch-friendly expandable accordion drawer on screens $\le 960\text{px}$.
+### 1. 🧭 Polymorphic 9-Category Mega Menu & Mobile Drawer
+- **Desktop Navigation:** 9 top-level categories (*About, Services, AI Solutions, Industries, Packages, Portfolio, Case Studies, Blog, Contact*).
+- **Grouped Services Layout:** 3-column layout organizing *Development*, *Solutions*, and *Digital Marketing* with vector icons, descriptions, and active links.
+- **Accessible Interaction:** Click triggers, keyboard <kbd>Escape</kbd> dismissal, outside-click detection, and `aria-expanded` attributes.
+- **Mobile Drawer:** Responsive hamburger menu with nested accordion expanders and touch-friendly targets.
 
-### 2. 📱 Fully Responsive Design
-- Optimized across breakpoints: **360px** (compact mobile), **390px** (modern phone), **768px** (tablet), **1024px** (tablet landscape / laptop), and **1366px / 1440px** (desktop).
-- Responsive container layouts tested across desktop, tablet, and mobile viewports.
+### 2. ⚡ AI-Powered Solutions & Search Visibility Showcase (`#ai-solutions`)
+- **Autonomous Agents Pipeline:** Interactive 4-stage execution log demonstrating autonomous agents handling multi-source research, reasoning, code synthesis, and verification.
+- **Generative Engine Optimization (GEO):** Structured paradigm breakdown contrasting traditional Google SEO with modern AI search engines (ChatGPT, Google Gemini Overviews, Perplexity, Claude).
 
-### 3. 💼 Comprehensive Business Sections
-- **Hero Section:** Value proposition with trust metric counters (200K Satisfied Customers) and hero imagery.
-- **Services Showcase:** Interactive service cards with hover animations.
-- **About Us & Metrics:** Highlights company strengths with animated numerical milestones (250+ Projects Completed, 5+ Countries Served).
-- **Work Process:** Structured 4-phase agile methodology (Discovery, Planning, Development, Launch & Support).
-- **Portfolio Showcase:** Project showcase with interactive carousel pagination for client deliverables.
-- **Flexible Pricing Plans:** Tiered packages (Basic, Standard, Premium) with feature checklists.
-- **Contact & Lead Generation:** Direct contact channels (WhatsApp, phone, email, office location) and an interactive project inquiry form.
-- **Footer & Insights:** Multi-column footer with quick navigation, social channels, newsletter subscription, and floating WhatsApp / scroll-to-top controls.
+### 3. 💼 10-Pillar Services Ecosystem (`#services`)
+- **60+ Specialized Subservices:** Categorized across *AI Solutions, AI Search Optimization, Web Development, Mobile Apps, UI/UX Design, Custom Software, DevOps & Cloud, API Integration, Website Maintenance,* and *Digital Marketing*.
+- **Interactive Tab Bar:** Fluid horizontal scrolling tab bar with active category indicators.
+- **Real-Time Cross-Category Search:** Instant keyword filtering across service names, descriptions, and deliverables with live match counters and quick-clear controls.
 
-### 4. 🛡️ Client-Side Form Validation (Frontend Only)
-- **Contact Inquiry Form (`#contact`):** Validates required input fields, name formatting, email syntax, phone number digit count (7 to 15 digits), and service selection with dynamic status feedback.
-- **Newsletter Subscription (`#footer`):** Validates email format and non-empty input before displaying feedback.
-- **Implementation Notice:** Both forms currently implement client-side validation only. They do not persist data to a database, trigger external APIs, or dispatch emails to a backend server. Backend integration can be connected via API endpoints or serverless functions as needed.
+### 4. 🏢 Industries We Serve (`#industries`)
+- **10 Industry Cards:** *Healthcare & MedTech, Education & EdTech, E-Commerce & Retail, Banking & FinTech, Logistics & Supply Chain, Travel & Hospitality, Media & Entertainment, Business & Professional Services, Wellness & Fitness,* and *Sports & Athletics*.
+- **Compliance Badges:** Relevant industry standards highlighted (HIPAA, FERPA, PCI-DSS, SOC 2, ISO 27001).
+
+### 5. 🛠️ Interactive Technology Stack (`#tech-stack`)
+- **37 Developer Tools across 9 Categories:** *Frontend, Backend, Mobile, Database, Frameworks, Cloud, E-commerce, CMS,* and *DevOps*.
+- **Search & Filter:** Instant search bar filtering technologies by name, proficiency level, and ecosystem tags.
+
+### 6. 🚀 8-Step Agile Delivery Lifecycle (`#process`)
+- Detailed stage progression:
+  1. *Discovery & Consultation*
+  2. *Requirement Analysis*
+  3. *Planning & Architecture*
+  4. *UI/UX Design*
+  5. *Development*
+  6. *Testing & QA*
+  7. *Deployment & Go-Live*
+  8. *Training & Support*
+- Includes stage milestone outputs and deliverable checklists.
+
+### 7. 🎨 Project Portfolio & Accessible Case Study Modals (`#portfolio`, `#case-studies`)
+- **12 Category Filters:** Filterable gallery supporting paginated 3-item carousel with Prev/Next and dot navigation.
+- **Interactive Case Study Modals:** Full-screen dialog displaying Problem Statements, Architecture Solutions, Tech Stacks, and architectural benchmark metrics (clearly noted as illustrative staging simulations rather than production client data).
+- **Modal Accessibility:** Focus management upon open, background scroll lock (`overflow: hidden`), backdrop dismissal, and <kbd>Escape</kbd> key handling.
+
+### 8. 💰 Specialized Packages & Transparent Pricing (`#pricing`)
+- **5 Package Pillars:** *SEO Growth Plans, Local SEO Booster, E-Commerce SEO, Social Media (SMO),* and *Google Ads (PPC)*.
+- **Transparent Quote Workflow:** Avoids arbitrary fixed fees in favor of customizable scopes and "Request a Quote" actions.
+
+### 9. 🛡️ Trust, Social Proof & AI Visibility Demo (`#trust`)
+- 6 core enterprise strengths and milestone delivery counters.
+- Simulated prompt query demonstration showing how AI models retrieve and cite structured brand knowledge.
+
+### 10. 📝 Industry Insights & Engineering Blog (`#blog`)
+- 5 categories (*AI & Technology, Web Development, SEO & Digital Marketing, Mobile Applications, Business Growth*) with interactive pagination and full article reading modals (labeled as editorial samples).
+
+### 11. ❓ Interactive FAQs (`#faq`)
+- 10 comprehensive FAQs covering project timelines, IP ownership, HIPAA/PCI compliance, CMS migration, and support SLAs.
+- Live keyword search bar and accessible accordions.
+
+### 12. 📬 Contact & Consultation Lead Engine (`#contact`)
+- **Input Fields:** First Name, Last Name, Company Name (Optional), Phone Number, Email Address, 10-Service Dropdown, and Project Scope Textarea.
+- **Validation Engine:** Strict RFC 5322 regex email validation, 7–15 digit phone validation, and required field checks.
+- **Direct Scheduling CTAs:** WhatsApp direct consultation and email appointment links.
+- **Frontend Mode Disclosure:** Transparently informs users that client-side validation has passed and that an active backend API or SMTP gateway is required for live email transmission (logging formatted payloads to the console for testing).
+
+### 13. 🗺️ Comprehensive 9-Group Sitemap Footer (`#footer`)
+- 9 organized link columns covering the entire website sitemap.
+- Newsletter subscription form with regex validation and honest frontend status disclosure.
+- Functional smooth back-to-top scroll button and company contact channels.
 
 ---
 
 ## 🛠️ Technology Stack
 
-| Category | Technology | Version | Purpose |
-| :--- | :--- | :---: | :--- |
-| **Frontend Framework** | [React](https://react.dev/) | `^19.3.1` | Component architecture, state management, and hooks (`useState`, `useEffect`, `useRef`) |
-| **DOM Renderer** | [React DOM](https://react.dev/) | `^19.3.1` | React DOM rendering engine |
-| **Build Tool & Bundler** | [Vite](https://vite.dev/) | `^8.3.5` | Development server with HMR and production bundling |
-| **Babel/React Plugin** | [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react) | `^6.1.2` | Fast React refresh and JSX transformation |
-| **Styling & Design System** | Vanilla CSS3 | Standard | Custom CSS variables, Glassmorphism, CSS Grid, Flexbox, keyframe animations |
-| **Typography** | [Google Fonts](https://fonts.google.com/) | Web | *Plus Jakarta Sans* font family |
-| **Icons** | Inline Vector SVG & React Icons | `^5.7.0` | Crisp vector iconography |
-| **Linter & Quality** | [Oxlint](https://oxc.rs/) | `^1.89.0` | High-speed static analysis and lint rule enforcement |
-| **Hosting & Deployment** | [Vercel](https://vercel.com/) | Cloud | Global edge hosting with automatic Git CI/CD and SPA fallback routing |
+| Technology | Version | Purpose |
+| :--- | :---: | :--- |
+| **[React](https://react.dev/)** | `^19.3.1` | Declarative UI components, state management (`useState`, `useMemo`, `useEffect`, `useRef`) |
+| **[React DOM](https://react.dev/)** | `^19.3.1` | React DOM rendering engine |
+| **[Vite](https://vite.dev/)** | `^8.3.5` | Next-generation frontend build tooling and rapid Hot Module Replacement (HMR) |
+| **[@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react)** | `^6.1.2` | Fast React refresh and JSX transformation |
+| **[JavaScript (ES6+)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** | Modern | Clean modular scripts, destructuring, array pipelines, and regex validation |
+| **Vanilla CSS3** | Standard | CSS variables, Flexbox, CSS Grid, animations, and high-contrast focus rings |
+| **[React Icons](https://react-icons.github.io/react-icons/)** | `^5.7.0` | High-quality SVG vector icons |
+| **[Google Fonts](https://fonts.google.com/)** | Web | Typography (*Plus Jakarta Sans*, weights 300 to 800) |
+| **[Oxlint](https://oxc.rs/)** | `^1.89.0` | Ultra-fast linter enforcing code quality with zero warnings or errors |
+| **[Vercel](https://vercel.com/)** | Cloud | Production edge hosting, automated GitHub CI/CD, and SPA fallback routing |
 
 ---
 
-## 📑 Website Sections
+## ♿ Accessibility Features & Responsive Design
 
-1. **Header / Navigation:** Sticky header with company logo, mega menu dropdowns, direct WhatsApp action button, and "Get In Touch" CTA.
-2. **Hero (`#hero`):** Value proposition, capability highlights, proof metrics, and primary CTA.
-3. **Services (`#services`):** Core engineering offerings (Web Development, eCommerce solutions, Custom Web development, SEO, Social Media Optimization).
-4. **About Us (`#about`):** Company background, core strengths, and counter milestones.
-5. **Process (`#process`):** 4-step delivery lifecycle (Discovery, Planning, Development, Launch & Support).
-6. **Portfolio (`#portfolio`):** Client deliverables and cross-platform application gallery.
-7. **Pricing (`#pricing`):** Tiered pricing packages for diverse business scales.
-8. **Contact (`#contact`):** Interactive inquiry form with direct communication channels.
-9. **Call to Action (`#cta`):** Full-width conversion banner.
-10. **Footer (`#footer`):** Navigation directory, newsletter signup, copyright notice, and floating WhatsApp / scroll-to-top controls.
+### Implemented Accessibility Features
+- **Visible Keyboard Focus States:** Custom `:focus-visible` styling (`outline: 2px solid #D9F45F; outline-offset: 3px`) across interactive elements (`a`, `button`, `input`, `select`, `textarea`, `[tabindex]`) ensures clear navigation feedback for keyboard visitors.
+- **Semantic Structure & ARIA:** Built with semantic landmarks (`<header>`, `<main>`, `<section>`, `<nav>`, `<footer>`) paired with appropriate ARIA roles and attributes (`aria-expanded`, `aria-controls`, `aria-modal`, `role="region"`, `role="dialog"`, `role="alert"`) across menus, accordions, and dialogs.
+- **Modal Focus Management:** Modal dialogs automatically focus upon opening, trap <kbd>Escape</kbd> key events for dismissal, and restore window body scroll on close.
+- **Reduced Motion Support:** Includes `@media (prefers-reduced-motion: reduce)` media query that scales down transitions and animations for visitors with motion sensitivities.
+- **High Text Contrast:** Dark canvas surfaces (`#000000`, `#151414`) paired with pure white (`#FFFFFF`) body copy and high-visibility lime accents (`#D9F45F`) deliver strong visual contrast for legibility.
+
+### Responsive Breakpoints
+Tested across six standard viewport sizes with fluid grid adaptation and zero horizontal overflow:
+- **360px & 390px:** Mobile portrait — accordions expand smoothly; grids collapse to single columns; tab bars support touch scroll.
+- **768px:** Tablet portrait — 2-column card layouts and touch-friendly 44px+ click targets.
+- **1024px:** Tablet landscape / small laptop — 9-item navigation header and multi-column mega menus.
+- **1366px & 1440px:** Desktop and large displays — 1200px centered container with multi-tier layouts.
 
 ---
 
@@ -104,10 +158,11 @@ A live interactive preview is accessible directly at **[silwasa-it-solutions-web
 ```text
 Silwasa-IT-Solutions-Website/
 ├── public/
-│   ├── favicon.svg            # Favicon asset
-│   └── icons.svg              # SVG sprite icons
+│   ├── favicon.svg                   # SVG favicon
+│   ├── icons.svg                     # SVG sprite icons
+│   └── silwasa-white-logo.webp       # Static asset for absolute OpenGraph & Twitter cards
 ├── src/
-│   ├── assets/                # Optimized WebP and PNG graphics
+│   ├── assets/                       # Compressed WebP and vector assets
 │   │   ├── about-us-silwasa-it-solutions-1024x683.webp
 │   │   ├── hero.png
 │   │   ├── image.webp
@@ -116,43 +171,62 @@ Silwasa-IT-Solutions-Website/
 │   │   ├── silwasa-white-logo.webp
 │   │   ├── tick-icon.svg
 │   │   └── vite.svg
-│   ├── components/            # Modular React components
-│   │   ├── About.jsx          # About section & animated stats
-│   │   ├── Contact.jsx        # Contact channels & client-side form
-│   │   ├── CTA.jsx            # Conversion banner
-│   │   ├── Footer.jsx         # Footer & newsletter form
-│   │   ├── Header.jsx         # Sticky header & navigation state
-│   │   ├── Hero.jsx           # Hero banner & intro content
-│   │   ├── MegaMenu.jsx       # Multi-column mega menu dropdown
-│   │   ├── Portfolio.jsx      # Project carousel
-│   │   ├── Pricing.jsx        # Pricing tier cards
-│   │   ├── Process.jsx        # 4-step process methodology
-│   │   └── Services.jsx       # Core services cards
-│   ├── data/
-│   │   └── megaMenuData.jsx   # Structured menu categories & SVG icons
-│   ├── App.css                # Component-level styles
-│   ├── App.jsx                # Root layout orchestrator
-│   ├── index.css              # Global design tokens & mega menu styles
-│   └── main.jsx               # Application DOM entry point
-├── .gitignore                 # Excludes node_modules, dist, .env, .vercel
-├── .oxlintrc.json             # Oxlint configuration
-├── index.html                 # HTML shell & font preconnects
-├── package.json               # Scripts and dependencies
-├── package-lock.json          # Deterministic dependency tree
-├── README.md                  # Project documentation
-├── vercel.json                # Vercel SPA rewrite fallback rules
-└── vite.config.js             # Vite build & plugin setup
+│   ├── components/                   # Modular React UI components
+│   │   ├── modals/                   # Accessible popup dialogs
+│   │   │   ├── BlogModal.jsx         # Full article reading modal
+│   │   │   └── CaseStudyModal.jsx    # Architectural deep-dive modal
+│   │   ├── About.jsx                 # About section & milestones
+│   │   ├── AISolutionsShowcase.jsx   # Autonomous agents & GEO/AEO/LLM SEO showcase
+│   │   ├── Blog.jsx                  # Engineering blog carousel
+│   │   ├── CaseStudies.jsx           # Featured case studies section
+│   │   ├── Contact.jsx               # Validated contact form & direct channels
+│   │   ├── CTA.jsx                   # Conversion call-to-action banner
+│   │   ├── FAQ.jsx                   # Searchable interactive FAQ accordions
+│   │   ├── Footer.jsx                # 9-column sitemap footer & newsletter
+│   │   ├── Header.jsx                # Sticky header, mega menu state & mobile drawer
+│   │   ├── Hero.jsx                  # Hero section with value proposition
+│   │   ├── Industries.jsx            # 10 industry vertical cards & compliance badges
+│   │   ├── MegaMenu.jsx              # Polymorphic mega menu dropdown panel
+│   │   ├── Portfolio.jsx             # 12-category filterable project carousel
+│   │   ├── Pricing.jsx               # 5 specialized SEO & marketing packages
+│   │   ├── Process.jsx               # 8-step agile delivery lifecycle
+│   │   ├── Services.jsx              # 10-pillar services explorer with live search
+│   │   ├── TechStack.jsx             # 9-category interactive technology stack
+│   │   └── TrustSocialProof.jsx      # Company strengths & AI search visibility demo
+│   ├── data/                         # Structured data schemas
+│   │   ├── blogData.js               # Blog articles data
+│   │   ├── caseStudiesData.js        # Architectural case studies data
+│   │   ├── faqData.js                # 10 comprehensive FAQs data
+│   │   ├── industriesData.js         # 10 industry sectors data
+│   │   ├── megaMenuData.jsx          # Mega menu items, groups, and icons
+│   │   ├── packagesData.js           # 5 specialized package categories data
+│   │   ├── portfolioData.js          # 12 portfolio items data
+│   │   ├── servicesData.js           # 10 core service pillars & 60+ subservices
+│   │   ├── techStackData.js          # 37 developer technologies data
+│   │   └── trustData.js              # Strengths, metrics, and prompt benchmarks
+│   ├── App.css                       # Layout helper styles
+│   ├── App.jsx                       # Root layout orchestrator
+│   ├── index.css                     # Global design tokens, animations, a11y focus
+│   └── main.jsx                      # React 19 entry point
+├── .gitignore                        # Git exclusions (node_modules, dist, .env, .vercel)
+├── .oxlintrc.json                    # Oxlint rules configuration
+├── index.html                        # HTML shell, metadata, OpenGraph, font preconnects
+├── package.json                      # Project dependencies & scripts
+├── package-lock.json                 # Lockfile
+├── README.md                         # Project documentation
+├── vercel.json                       # SPA rewrite fallback configuration
+└── vite.config.js                    # Vite bundler configuration
 ```
 
 ---
 
-## ⚙️ Installation and Setup
+## ⚙️ Installation and Local Development
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (version `18.0` or higher recommended)
-- [npm](https://www.npmjs.com/) (version `9.0` or higher)
+- **Node.js:** `v20.19.0+` or `v22.12.0+` (Vite 8 requirement; LTS recommended)
+- **npm:** `v9.0.0` or higher
 
-### Steps
+### Step-by-Step Setup
 
 1. **Clone the repository:**
    ```bash
@@ -173,37 +247,37 @@ Silwasa-IT-Solutions-Website/
    ```bash
    npm run dev
    ```
-   Open [http://localhost:5173](http://localhost:5173) in your browser to view the application with hot module replacement (HMR).
+   Open [http://localhost:5173](http://localhost:5173) in your browser to view the application with Hot Module Replacement (HMR).
 
 ---
 
-## 📦 Production Build & Quality Check
+## 📦 Production Build & Quality Commands
 
 - **Run code quality linting:**
-   ```bash
-   npm run lint
-   ```
-   *Executes Oxlint over all project files (0 warnings, 0 errors).*
+  ```bash
+  npm run lint
+  ```
+  *Executes Oxlint over all 33 files with 104 rules (0 warnings, 0 errors).*
 
-- **Create production build:**
-   ```bash
-   npm run build
-   ```
-   *Compiles assets into the `dist/` folder with minification, tree-shaking, and gzip calculation.*
+- **Create an optimized production build:**
+  ```bash
+  npm run build
+  ```
+  *Compiles assets into the `dist/` folder with minification, tree-shaking, and gzip calculation.*
 
-- **Preview production build locally:**
-   ```bash
-   npm run preview
-   ```
+- **Preview the production build locally:**
+  ```bash
+  npm run preview
+  ```
 
 ---
 
-## 🚀 Deployment
+## 🚀 Deployment (Vercel)
 
-The project is deployed and hosted on **[Vercel](https://vercel.com/)** and connected with the GitHub repository on the `main` branch.
+The website is continuously deployed on **[Vercel](https://vercel.com/)** and synchronized with the `main` branch of this repository.
 
 ### SPA Fallback Routing
-To prevent HTTP 404 errors when visitors refresh or directly access subpaths, the project contains a [`vercel.json`](file:///d:/Adi%20Project/vercel.json) configuration that maps incoming requests back to `/index.html`:
+To ensure client-side routes and deep hash anchors resolve without HTTP 404 errors on browser refresh, the [`vercel.json`](vercel.json) file configures wildcard rewrites:
 
 ```json
 {
@@ -215,14 +289,30 @@ To prevent HTTP 404 errors when visitors refresh or directly access subpaths, th
 
 ---
 
+## ⚠️ Notes on Form Handling & Content Disclaimers
+
+1. **Frontend-Only Form Operation:** The inquiry form on `#contact` and the newsletter form on `#footer` perform client-side regex and completeness validation. They do not dispatch live emails or store records in a database. Developers connecting this project to a backend can wire the validated JSON payloads directly to an API endpoint (e.g., Node/Express, Firebase Cloud Functions, or Resend).
+2. **Illustrative Demonstration Content & Benchmarks:** To ensure ethical representation without fabricated client credentials:
+   - Portfolio projects, partner feedback cards, and the AI search visibility prompt benchmark are explicitly labeled as illustrative architecture demonstrations.
+   - Case study metrics, throughput rates, and latency benchmarks represent simulated staging stress-test scenarios, not verified metrics from real external clients.
+   - Blog posts represent editorial sample articles.
+3. **Company Contact Information:** Contact details are sourced directly from the original project repository and company records:
+   - **Telephone:** `+91-7070717794`
+   - **WhatsApp:** `https://wa.me/917070717794`
+   - **Email:** `info@silwasa.com` / `hello@silwasa.com`
+   - **Headquarters:** Rohini, New Delhi, India
+
+---
+
 ## 👩‍💻 Author
 
 - **Simran Keshri**
 - GitHub: [@Simran-Keshri03](https://github.com/Simran-Keshri03)
 - Project Repository: [Silwasa-IT-Solutions-Website](https://github.com/Simran-Keshri03/Silwasa-IT-Solutions-Website)
+- Live Website: [silwasa-it-solutions-website.vercel.app](https://silwasa-it-solutions-website.vercel.app/)
 
 ---
 
-## 📄 Project Status & Rights
+## 📄 License & Intellectual Property
 
-This repository is developed for portfolio and commercial demonstration purposes. No formal open-source license is granted. All rights to branding, graphics, and associated company assets belong to Silwasa IT Solutions.
+This repository is developed for portfolio and commercial presentation purposes. All rights to branding, graphics, trademarks, and associated company identity belong to **Silwasa IT Solutions**.
