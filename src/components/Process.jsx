@@ -4,41 +4,102 @@ export default function Process() {
   const steps = [
     {
       num: '01',
-      title: 'Discovery',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      title: 'Discovery & Consultation',
+      desc: 'We initiate every engagement with a strategic technical audit, identifying commercial bottlenecks, stakeholder expectations, and system feasibility.',
+      deliverables: ['Stakeholder discovery workshops', 'Commercial feasibility report', 'High-level project scope outline'],
       icon: (
-        <svg aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" style={{ width: '24px', height: '24px' }}>
-          <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" />
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '24px', height: '24px' }}>
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
         </svg>
       ),
     },
     {
       num: '02',
-      title: 'Planning',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      title: 'Requirement Analysis',
+      desc: 'Deep-dive functional mapping, user persona formulations, and data flow modeling to establish an unambiguous specification document.',
+      deliverables: ['Software Requirements Specification (SRS)', 'Database entity relationship diagram', 'API endpoints specification'],
       icon: (
-        <svg aria-hidden="true" viewBox="0 0 384 512" fill="currentColor" style={{ width: '24px', height: '24px' }}>
-          <path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z" />
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '24px', height: '24px' }}>
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="16" y1="13" x2="8" y2="13" />
+          <line x1="16" y1="17" x2="8" y2="17" />
+          <polyline points="10 9 9 9 8 9" />
         </svg>
       ),
     },
     {
       num: '03',
-      title: 'Development',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      title: 'Planning & Architecture',
+      desc: 'Architecting scalable cloud microservices, database schemas, security protocols, and defining two-week agile sprint milestones.',
+      deliverables: ['Cloud infrastructure blueprint (AWS/GCP)', 'Sprint release calendar & milestones', 'Cybersecurity & compliance baseline'],
       icon: (
-        <svg aria-hidden="true" viewBox="0 0 640 512" fill="currentColor" style={{ width: '24px', height: '24px' }}>
-          <path d="M278.9 511.5l-61-61c-4.7-4.7-4.7-12.3 0-17l148.9-149.1L217.9 135.3c-4.7-4.7-4.7-12.3 0-17l61-61c4.7-4.7 12.3-4.7 17 0l218.4 218.5c4.7 4.7 4.7 12.3 0 17L295.9 511.5c-4.7 4.7-12.3 4.7-17 0zm-126.8-17l61-61c4.7-4.7 4.7-12.3 0-17L64.2 267.4l148.9-149.1c4.7-4.7 4.7-12.3 0-17l-61-61c-4.7-4.7-12.3-4.7-17 0L8.7 258.8c-4.7 4.7-4.7 12.3 0 17l218.4 218.5c4.7 4.7 12.3 4.7 17 0z" />
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '24px', height: '24px' }}>
+          <polygon points="12 2 2 7 12 12 22 7 12 2" />
+          <polyline points="2 17 12 22 22 17" />
+          <polyline points="2 12 12 17 22 12" />
         </svg>
       ),
     },
     {
       num: '04',
-      title: 'Launch & Sopport',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      title: 'UI/UX Design',
+      desc: 'Creating human-centered wireframes, interactive Figma prototypes, and cohesive design systems following accessibility guidelines.',
+      deliverables: ['Figma design system & tokens', 'Interactive clickable mobile/web prototypes', 'Usability testing validation feedback'],
       icon: (
-        <svg aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" style={{ width: '24px', height: '24px' }}>
-          <path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432c3.2-18.9-16.1-34.9-35.6-24.8z" />
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '24px', height: '24px' }}>
+          <path d="M12 20h9" />
+          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+        </svg>
+      ),
+    },
+    {
+      num: '05',
+      title: 'Development',
+      desc: 'Writing clean, modular code in two-week agile sprints. Clients receive weekly demo builds and full access to private GitHub repositories.',
+      deliverables: ['Clean, tested TypeScript/React/Node code', 'Weekly staging deployment previews', 'Private GitHub repository access'],
+      icon: (
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '24px', height: '24px' }}>
+          <polyline points="16 18 22 12 16 6" />
+          <polyline points="8 6 2 12 8 18" />
+        </svg>
+      ),
+    },
+    {
+      num: '06',
+      title: 'Testing & Quality Assurance',
+      desc: 'Rigorous automated unit testing, end-to-end user journey simulation, security vulnerability scans, and cross-browser responsiveness tests.',
+      deliverables: ['Automated CI/CD test passes (95%+ coverage)', 'Cross-browser & mobile device test reports', 'OWASP vulnerability audit certification'],
+      icon: (
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '24px', height: '24px' }}>
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <polyline points="9 12 11 14 15 10" />
+        </svg>
+      ),
+    },
+    {
+      num: '07',
+      title: 'Deployment & Go-Live',
+      desc: 'Zero-downtime blue/green cloud production rollout, automated SSL configuration, edge CDN caching, and live traffic telemetry monitoring.',
+      deliverables: ['Zero-downtime production deployment', 'SSL & DNS propagation verification', 'CloudWatch / Datadog live telemetry setup'],
+      icon: (
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '24px', height: '24px' }}>
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        </svg>
+      ),
+    },
+    {
+      num: '08',
+      title: 'Training & Ongoing Support',
+      desc: 'Comprehensive administrative onboarding, complete technical documentation handover, and proactive 24/7 SLA maintenance care.',
+      deliverables: ['Live staff training video sessions', 'Admin handover runbook & documentation', 'Proactive 24/7 SLA maintenance care'],
+      icon: (
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '24px', height: '24px' }}>
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
         </svg>
       ),
     },
@@ -49,33 +110,65 @@ export default function Process() {
       id="process"
       style={{
         backgroundColor: 'var(--e-global-color-4793e6c)',
-        paddingTop: '50px',
-        paddingBottom: '50px',
+        paddingTop: '60px',
+        paddingBottom: '60px',
         borderTop: '1px solid rgba(255, 255, 255, 0.05)',
       }}
     >
       <div className="container">
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-          <span className="section-badge">Our Process</span>
-          <h2 className="section-title">How we work</h2>
+        <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+          <div style={{ display: 'inline-block', marginBottom: '8px' }}>
+            <span
+              style={{
+                backgroundColor: '#2A2B28',
+                padding: '6px 16px',
+                borderRadius: '30px',
+                fontSize: '13px',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                color: 'var(--e-global-color-accent)',
+                letterSpacing: '0.8px',
+                display: 'inline-block',
+                border: '1px solid rgba(217, 244, 95, 0.25)',
+              }}
+            >
+              8-STEP AGILE METHODOLOGY
+            </span>
+          </div>
+
+          <h2
+            style={{
+              fontSize: '40px',
+              fontWeight: 700,
+              color: 'var(--e-global-color-secondary)',
+              lineHeight: 1.25,
+              marginBottom: '14px',
+            }}
+          >
+            How We Deliver Digital Excellence
+          </h2>
+
           <p
             className="section-desc"
             style={{
+              maxWidth: '820px',
               margin: '0 auto',
-              maxWidth: '720px',
+              fontSize: '15px',
+              color: 'var(--e-global-color-text)',
+              lineHeight: 1.6,
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            A disciplined, transparent 8-phase software engineering lifecycle engineered to mitigate risk, deliver predictable sprint milestones, and build scalable digital solutions on schedule.
           </p>
         </div>
 
-        {/* 4 Cards Grid (elementor-element-b0396f4: repeat(4, 1fr) on desktop, repeat(1, 1fr) on mobile) */}
+        {/* 8 Cards Grid (4 columns on desktop, 2 on tablet, 1 on mobile) */}
         <div
           className="process-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '20px',
           }}
         >
@@ -84,38 +177,57 @@ export default function Process() {
               key={i}
               className="process-card"
               style={{
-                backgroundColor: 'transparent',
-                border: '1px solid var(--e-global-color-primary)',
-                borderRadius: '10px',
-                padding: '20px 18px',
+                backgroundColor: 'var(--e-global-color-2dc5e2b)',
+                border: '1px solid rgba(102, 51, 153, 0.4)',
+                borderRadius: '12px',
+                padding: '24px 20px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                transition: 'border-color 0.3s ease, transform 0.3s ease',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'var(--e-global-color-accent)';
+                e.currentTarget.style.boxShadow = '0 0 16px rgba(217, 244, 95, 0.2)';
+                e.currentTarget.style.transform = 'translateY(-3px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(102, 51, 153, 0.4)';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.4)';
+                e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               <div>
+                {/* Step Number & Icon */}
                 <div
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    marginBottom: '14px',
+                    marginBottom: '16px',
                   }}
                 >
                   <span
                     style={{
-                      fontSize: '36px',
-                      fontWeight: 700,
+                      fontSize: '32px',
+                      fontWeight: 800,
                       color: 'var(--e-global-color-accent)',
                       lineHeight: 1,
+                      letterSpacing: '-1px',
                     }}
                   >
                     {st.num}
                   </span>
+
                   <div
                     style={{
-                      color: 'var(--e-global-color-primary)',
+                      width: '42px',
+                      height: '42px',
+                      borderRadius: '8px',
+                      backgroundColor: 'rgba(102, 51, 153, 0.2)',
+                      border: '1px solid var(--e-global-color-primary)',
+                      color: 'var(--e-global-color-accent)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -125,10 +237,11 @@ export default function Process() {
                   </div>
                 </div>
 
+                {/* Step Title */}
                 <h3
                   style={{
                     fontSize: '18px',
-                    fontWeight: 600,
+                    fontWeight: 700,
                     color: 'var(--e-global-color-secondary)',
                     marginBottom: '8px',
                     lineHeight: 1.3,
@@ -137,37 +250,73 @@ export default function Process() {
                   {st.title}
                 </h3>
 
+                {/* Step Description */}
                 <p
                   style={{
-                    fontSize: '14px',
+                    fontSize: '13px',
                     color: 'var(--e-global-color-text)',
-                    lineHeight: 1.6,
-                    margin: 0,
+                    lineHeight: 1.55,
+                    marginBottom: '16px',
                   }}
                 >
                   {st.desc}
                 </p>
+
+                {/* Deliverables checklist */}
+                <div style={{ marginTop: 'auto' }}>
+                  <span
+                    style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      color: 'rgba(255, 255, 255, 0.5)',
+                      display: 'block',
+                      marginBottom: '6px',
+                      letterSpacing: '0.5px',
+                    }}
+                  >
+                    Key Milestone Outputs:
+                  </span>
+                  <ul style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                    {st.deliverables.map((del, dIdx) => (
+                      <li
+                        key={dIdx}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '6px',
+                          fontSize: '12px',
+                          color: 'rgba(255, 255, 255, 0.8)',
+                          lineHeight: 1.35,
+                        }}
+                      >
+                        <span style={{ color: 'var(--e-global-color-accent)', fontWeight: 700 }}>•</span>
+                        <span>{del}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  marginTop: '16px',
+                  paddingTop: '10px',
+                  borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+                  fontSize: '11px',
+                  color: 'rgba(255, 255, 255, 0.45)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <span>Phase {st.num} of 08</span>
+                <span style={{ color: 'var(--e-global-color-accent)' }}>Agile Sprint</span>
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 1024px) {
-          .process-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-        }
-        @media (max-width: 767px) {
-          .process-grid {
-            grid-template-columns: 1fr !important;
-            gap: 30px !important;
-            padding-top: 1rem !important;
-            padding-bottom: 1rem !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

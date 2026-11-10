@@ -21,6 +21,7 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
+      <span id="home" style={{ position: 'absolute', top: 0, left: 0 }} aria-hidden="true" />
       <div className="container">
         <div
           style={{

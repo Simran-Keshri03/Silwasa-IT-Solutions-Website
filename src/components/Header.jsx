@@ -42,13 +42,17 @@ export default function Header() {
     };
   }, []);
 
+  // 9 Complete Navigation Categories per specification
   const navItems = [
     { name: 'About', defaultHref: '#about' },
     { name: 'Services', defaultHref: '#services' },
-    { name: 'Case Studies', defaultHref: '#portfolio' },
-    { name: 'Industries', defaultHref: '#services' },
+    { name: 'AI Solutions', defaultHref: '#ai-solutions' },
+    { name: 'Industries', defaultHref: '#industries' },
+    { name: 'Packages', defaultHref: '#pricing' },
     { name: 'Portfolio', defaultHref: '#portfolio' },
-    { name: 'Blog', defaultHref: '#footer' },
+    { name: 'Case Studies', defaultHref: '#case-studies' },
+    { name: 'Blog', defaultHref: '#blog' },
+    { name: 'Contact', defaultHref: '#contact' },
   ];
 
   const handleNavClick = (name) => {
@@ -59,6 +63,11 @@ export default function Header() {
     setActiveMenu(null);
     setMobileMenuOpen(false);
     setMobileExpandedMenu(null);
+
+    // If external link (tel, mailto, whatsapp) or external URL, let browser handle normally
+    if (href && (href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:'))) {
+      return;
+    }
 
     // If anchor link on same page, scroll smoothly
     if (href && href.startsWith('#')) {
@@ -95,12 +104,13 @@ export default function Header() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          paddingTop: '12px',
-          paddingBottom: '12px',
+          paddingTop: '10px',
+          paddingBottom: '10px',
+          gap: '12px',
         }}
       >
         {/* Logo */}
-        <div style={{ flex: '0 0 auto', maxWidth: '160px' }}>
+        <div style={{ flex: '0 0 auto', maxWidth: '145px' }}>
           <a
             href="#hero"
             style={{ display: 'block' }}
@@ -110,9 +120,11 @@ export default function Header() {
               src={logo}
               alt="Silwasa Logo"
               style={{
-                width: '75%',
+                width: '100%',
+                maxHeight: '40px',
                 height: 'auto',
                 display: 'block',
+                objectFit: 'contain',
               }}
             />
           </a>
@@ -124,7 +136,7 @@ export default function Header() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '20px',
+            gap: '12px',
           }}
           aria-label="Main Navigation"
         >
@@ -165,7 +177,8 @@ export default function Header() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '14px',
+            gap: '10px',
+            flexShrink: 0,
           }}
         >
           {/* WhatsApp Button */}
@@ -178,13 +191,13 @@ export default function Header() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
-              padding: '4px 8px',
+              padding: '6px 10px',
               border: '1px solid var(--e-global-color-text)',
               borderRadius: '3px',
-              boxShadow: '3px 3px 0px 0px #424242',
+              boxShadow: '2px 2px 0px 0px #424242',
               backgroundColor: 'transparent',
               color: '#FFFFFF',
-              fontSize: '14px',
+              fontSize: '13px',
               fontWeight: 500,
               textDecoration: 'none',
               transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
@@ -195,13 +208,13 @@ export default function Header() {
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.boxShadow = '3px 3px 0px 0px #424242';
+              e.currentTarget.style.boxShadow = '2px 2px 0px 0px #424242';
             }}
           >
             <svg
               viewBox="0 0 448 512"
               fill="#06FF25"
-              style={{ width: '18px', height: '18px', flexShrink: 0 }}
+              style={{ width: '16px', height: '16px', flexShrink: 0 }}
             >
               <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
             </svg>
@@ -213,8 +226,8 @@ export default function Header() {
             href="#contact"
             className="btn-primary header-cta-btn"
             style={{
-              fontSize: '16px',
-              padding: '10px 16px',
+              fontSize: '14px',
+              padding: '8px 14px',
             }}
             onClick={(e) => handleItemClick('#contact', e)}
           >
@@ -311,40 +324,87 @@ export default function Header() {
                 {isExpanded && menuData && (
                   <div className="mobile-accordion-body">
                     {/* Feature Card Preview on Mobile */}
-                    <div
-                      style={{
-                        padding: '12px 14px',
-                        background: 'linear-gradient(145deg, rgba(102, 51, 153, 0.25) 0%, rgba(20, 20, 20, 0.8) 100%)',
-                        border: '1px solid rgba(102, 51, 153, 0.3)',
-                        borderRadius: '6px',
-                        marginBottom: '8px',
-                      }}
-                    >
-                      <span className="mega-menu-badge" style={{ fontSize: '10px', padding: '2px 8px', marginBottom: '8px' }}>
-                        {menuData.featureCard.badge}
-                      </span>
-                      <p style={{ color: 'var(--e-global-color-text)', fontSize: '12px', lineHeight: 1.5, margin: 0 }}>
-                        {menuData.featureCard.description}
-                      </p>
-                    </div>
-
-                    {/* Subcategory items */}
-                    {menuData.items.map((subItem) => (
-                      <a
-                        key={subItem.id}
-                        href={subItem.href}
-                        className="mobile-mega-item"
-                        onClick={(e) => handleItemClick(subItem.href, e)}
+                    {menuData.featureCard && (
+                      <div
+                        style={{
+                          padding: '12px 14px',
+                          background: 'linear-gradient(145deg, rgba(102, 51, 153, 0.25) 0%, rgba(20, 20, 20, 0.8) 100%)',
+                          border: '1px solid rgba(102, 51, 153, 0.3)',
+                          borderRadius: '6px',
+                          marginBottom: '8px',
+                        }}
                       >
-                        <div className="mobile-mega-item-icon">
-                          {subItem.icon}
-                        </div>
-                        <div>
-                          <div className="mobile-mega-item-title">{subItem.title}</div>
-                          <div className="mobile-mega-item-desc">{subItem.description}</div>
-                        </div>
-                      </a>
-                    ))}
+                        <span className="mega-menu-badge" style={{ fontSize: '10px', padding: '2px 8px', marginBottom: '8px' }}>
+                          {menuData.featureCard.badge}
+                        </span>
+                        <p style={{ color: 'var(--e-global-color-text)', fontSize: '12px', lineHeight: 1.5, margin: 0 }}>
+                          {menuData.featureCard.description}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* If menuData has groups (e.g., Services) */}
+                    {menuData.groups && (
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                        {menuData.groups.map((grp, gIdx) => (
+                          <div key={gIdx}>
+                            <div
+                              style={{
+                                fontSize: '11px',
+                                fontWeight: 700,
+                                textTransform: 'uppercase',
+                                color: 'var(--e-global-color-accent)',
+                                letterSpacing: '0.6px',
+                                marginBottom: '6px',
+                                paddingLeft: '4px',
+                              }}
+                            >
+                              {grp.title}
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                              {grp.items.map((subItem) => (
+                                <a
+                                  key={subItem.id}
+                                  href={subItem.href}
+                                  className="mobile-mega-item"
+                                  onClick={(e) => handleItemClick(subItem.href, e)}
+                                >
+                                  <div className="mobile-mega-item-icon">
+                                    {subItem.icon}
+                                  </div>
+                                  <div>
+                                    <div className="mobile-mega-item-title">{subItem.title}</div>
+                                    <div className="mobile-mega-item-desc">{subItem.description}</div>
+                                  </div>
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* If menuData has flat items */}
+                    {menuData.items && (
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        {menuData.items.map((subItem) => (
+                          <a
+                            key={subItem.id}
+                            href={subItem.href}
+                            className="mobile-mega-item"
+                            onClick={(e) => handleItemClick(subItem.href, e)}
+                          >
+                            <div className="mobile-mega-item-icon">
+                              {subItem.icon}
+                            </div>
+                            <div>
+                              <div className="mobile-mega-item-title">{subItem.title}</div>
+                              <div className="mobile-mega-item-desc">{subItem.description}</div>
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

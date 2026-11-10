@@ -1,119 +1,205 @@
-import React, { useState } from 'react';
-import projectImg from '../assets/about-us-silwasa-it-solutions-1024x683.webp';
+import React, { useState, useMemo } from 'react';
+import { portfolioCategories, portfolioProjects } from '../data/portfolioData';
 
 export default function Portfolio() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [carouselIndex, setCarouselIndex] = useState(0);
 
-  const projects = [
-    {
-      title: 'Fashion Store',
-      category: 'eCommerce website',
-      image: projectImg,
-      link: '#',
-    },
-    {
-      title: 'Fashion Store',
-      category: 'eCommerce website',
-      image: projectImg,
-      link: '#',
-    },
-    {
-      title: 'Fashion Store',
-      category: 'eCommerce website',
-      image: projectImg,
-      link: '#',
-    },
-  ];
+  // Filter projects by selected category
+  const filteredProjects = useMemo(() => {
+    if (selectedCategory === 'All') {
+      return portfolioProjects;
+    }
+    return portfolioProjects.filter((p) => p.category === selectedCategory);
+  }, [selectedCategory]);
+
+  // Reset carousel index when category changes
+  const handleCategorySelect = (cat) => {
+    setSelectedCategory(cat);
+    setCarouselIndex(0);
+  };
+
+  // Carousel pagination
+  const itemsPerPage = 3;
+  const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : projects.length - 1));
+    setCarouselIndex((prev) => (prev > 0 ? prev - 1 : Math.max(0, totalPages - 1)));
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev < projects.length - 1 ? prev + 1 : 0));
+    setCarouselIndex((prev) => (prev < totalPages - 1 ? prev + 1 : 0));
   };
 
-  const displayProjects = projects.map((_, i) => projects[(i + currentIndex) % projects.length]);
+  // Visible items based on current page
+  const visibleProjects = useMemo(() => {
+    const start = carouselIndex * itemsPerPage;
+    return filteredProjects.slice(start, start + itemsPerPage);
+  }, [filteredProjects, carouselIndex, itemsPerPage]);
 
   return (
     <section
       id="portfolio"
       style={{
         backgroundColor: 'var(--e-global-color-2dc5e2b)',
-        paddingTop: '40px',
-        paddingBottom: '40px',
+        paddingTop: '60px',
+        paddingBottom: '60px',
         borderTop: '1px solid rgba(255, 255, 255, 0.05)',
         position: 'relative',
       }}
     >
       <div className="container">
-        {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-          <span
-            style={{
-              fontSize: '13px',
-              fontWeight: 500,
-              textTransform: 'uppercase',
-              color: 'var(--e-global-color-accent)',
-              letterSpacing: '0.5px',
-              display: 'block',
-              marginBottom: '8px',
-            }}
-          >
-            Featured projects
-          </span>
+        {/* Header (Exact styles: 13px uppercase #D9F45F badge + 40px white title) */}
+        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+          <div style={{ display: 'inline-block', marginBottom: '8px' }}>
+            <span
+              style={{
+                backgroundColor: '#2A2B28',
+                padding: '6px 16px',
+                borderRadius: '30px',
+                fontSize: '13px',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                color: 'var(--e-global-color-accent)',
+                letterSpacing: '0.8px',
+                display: 'inline-block',
+                border: '1px solid rgba(217, 244, 95, 0.25)',
+              }}
+            >
+              PROJECT PORTFOLIO
+            </span>
+          </div>
+
           <h2
             style={{
               fontSize: '40px',
-              fontWeight: 600,
+              fontWeight: 700,
               color: 'var(--e-global-color-secondary)',
-              marginBottom: '16px',
+              lineHeight: 1.25,
+              marginBottom: '14px',
             }}
           >
-            Our Recent Work
+            Our Digital Solutions Gallery
           </h2>
+
           <p
             className="section-desc"
             style={{
-              maxWidth: '740px',
+              maxWidth: '820px',
               margin: '0 auto',
+              fontSize: '15px',
+              color: 'var(--e-global-color-text)',
+              lineHeight: 1.6,
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            Browse our curated cross-industry portfolio. Each deliverable showcases modern software design, scalable microservice architectures, and sub-second performance.
           </p>
         </div>
 
-        {/* Carousel Container with Arrows (elementor-element-5c62251) */}
+        {/* 12 Category Filter Tabs */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '8px',
+            justifyContent: 'center',
+            marginBottom: '36px',
+          }}
+        >
+          {portfolioCategories.map((cat) => {
+            const isActive = selectedCategory === cat;
+            const count = cat === 'All' ? portfolioProjects.length : portfolioProjects.filter((p) => p.category === cat).length;
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => handleCategorySelect(cat)}
+                style={{
+                  backgroundColor: isActive ? 'var(--e-global-color-primary)' : 'var(--e-global-color-4793e6c)',
+                  color: isActive ? '#FFFFFF' : 'var(--e-global-color-text)',
+                  border: isActive
+                    ? '1px solid var(--e-global-color-primary)'
+                    : '1px solid rgba(255, 255, 255, 0.08)',
+                  borderRadius: '30px',
+                  padding: '7px 16px',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  transition: 'all 0.2s ease',
+                  boxShadow: isActive ? '0 0 10px rgba(102, 51, 153, 0.5)' : 'none',
+                }}
+                onMouseEnter={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.borderColor = 'var(--e-global-color-accent)';
+                    e.currentTarget.style.color = '#FFFFFF';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                    e.currentTarget.style.color = 'var(--e-global-color-text)';
+                  }
+                }}
+              >
+                <span>{cat}</span>
+                <span
+                  style={{
+                    fontSize: '10.5px',
+                    padding: '1px 5px',
+                    borderRadius: '8px',
+                    backgroundColor: isActive ? 'rgba(217, 244, 95, 0.2)' : 'rgba(255, 255, 255, 0.08)',
+                    color: isActive ? 'var(--e-global-color-accent)' : 'rgba(255, 255, 255, 0.5)',
+                  }}
+                >
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Carousel Container */}
         <div style={{ position: 'relative' }}>
-          {/* 3 Projects Grid (responsive: 3 on desktop, 2 on tablet, 1 on mobile) */}
+          {/* Projects Grid / Carousel Page */}
           <div
             className="portfolio-grid"
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
               gap: '24px',
+              minHeight: '480px',
             }}
           >
-            {displayProjects.map((proj, idx) => (
+            {visibleProjects.map((proj) => (
               <div
-                key={idx}
+                key={proj.id}
                 style={{
-                  borderRadius: '10px',
-                  overflow: 'hidden',
                   backgroundColor: 'var(--e-global-color-4793e6c)',
-                  boxShadow: '1px 1px 5px 0px #663399',
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  border: '2px solid var(--e-global-color-4793e6c)',
                   display: 'flex',
                   flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 0 5px 0 var(--e-global-color-primary)',
+                  transition: 'all 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--e-global-color-accent)';
+                  e.currentTarget.style.boxShadow = '0 0 15px rgba(217, 244, 95, 0.25)';
+                  e.currentTarget.style.transform = 'translateY(-3px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--e-global-color-4793e6c)';
+                  e.currentTarget.style.boxShadow = '0 0 5px 0 var(--e-global-color-primary)';
+                  e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                {/* Image */}
-                <div
-                  style={{
-                    width: '100%',
-                    aspectRatio: '16/10',
-                    overflow: 'hidden',
-                  }}
-                >
+                {/* Image Container with Badges */}
+                <div style={{ position: 'relative', width: '100%', height: '200px', overflow: 'hidden' }}>
                   <img
                     src={proj.image}
                     alt={proj.title}
@@ -122,169 +208,264 @@ export default function Portfolio() {
                       height: '100%',
                       objectFit: 'cover',
                       display: 'block',
+                      transition: 'transform 0.4s ease',
                     }}
                   />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(21, 20, 20, 0.9) 100%)',
+                    }}
+                  />
+
+                  {/* Badges on Image */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '12px',
+                      left: '12px',
+                      display: 'flex',
+                      gap: '8px',
+                      flexWrap: 'wrap',
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        color: 'var(--e-global-color-accent)',
+                        backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                        border: '1px solid rgba(217, 244, 95, 0.3)',
+                        padding: '3px 9px',
+                        borderRadius: '12px',
+                        backdropFilter: 'blur(4px)',
+                      }}
+                    >
+                      {proj.category}
+                    </span>
+                  </div>
+
+                  <span
+                    style={{
+                      position: 'absolute',
+                      bottom: '10px',
+                      right: '12px',
+                      fontSize: '10.5px',
+                      color: 'rgba(255, 255, 255, 0.65)',
+                      backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                      padding: '2px 8px',
+                      borderRadius: '4px',
+                    }}
+                  >
+                    ✦ {proj.badge}
+                  </span>
                 </div>
 
-                {/* Info & View Project Link (elementor-element-2b7dce5 & aaf5643) */}
-                <div
-                  style={{
-                    padding: '20px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: '12px',
-                  }}
-                >
+                {/* Card Info */}
+                <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>
                     <h3
                       style={{
-                        fontSize: '18px',
-                        fontWeight: 600,
-                        color: 'var(--e-global-color-secondary)',
-                        marginBottom: '4px',
+                        fontSize: '19px',
+                        fontWeight: 700,
+                        color: '#FFFFFF',
+                        marginBottom: '8px',
+                        lineHeight: 1.3,
                       }}
                     >
                       {proj.title}
                     </h3>
+
                     <p
                       style={{
-                        fontSize: '13px',
+                        fontSize: '13.5px',
                         color: 'var(--e-global-color-text)',
-                        margin: 0,
+                        lineHeight: 1.5,
+                        marginBottom: '16px',
                       }}
                     >
-                      {proj.category}
+                      {proj.description}
                     </p>
+
+                    {/* Features checklist */}
+                    <ul style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '16px' }}>
+                      {proj.features.slice(0, 3).map((feat, fIdx) => (
+                        <li
+                          key={fIdx}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'flex-start',
+                            gap: '8px',
+                            fontSize: '12px',
+                            color: 'rgba(255, 255, 255, 0.85)',
+                          }}
+                        >
+                          <span style={{ color: 'var(--e-global-color-accent)', fontWeight: 700 }}>✓</span>
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Tech stack pills */}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '16px' }}>
+                      {proj.technologies.map((tech, tIdx) => (
+                        <span
+                          key={tIdx}
+                          style={{
+                            fontSize: '11px',
+                            color: 'rgba(255, 255, 255, 0.75)',
+                            backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                            border: '1px solid rgba(255, 255, 255, 0.08)',
+                            padding: '2px 8px',
+                            borderRadius: '4px',
+                          }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
-                  {/* Clean text link: View Project + arrow (Exact styles from elementor-element-aaf5643) */}
-                  <a
-                    href={proj.link}
+                  {/* Card Bottom CTA */}
+                  <div
                     style={{
-                      display: 'inline-flex',
+                      paddingTop: '14px',
+                      borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                      display: 'flex',
                       alignItems: 'center',
-                      gap: '8px',
-                      fontSize: '16px',
-                      fontWeight: 500,
-                      color: 'var(--e-global-color-accent)',
-                      textDecoration: 'none',
-                      backgroundColor: 'transparent',
-                      border: 'none',
-                      padding: 0,
-                      transition: 'opacity 0.2s ease',
-                      flexShrink: 0,
+                      justifyContent: 'space-between',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
-                    onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                   >
-                    <span>View Project</span>
-                    <svg
-                      aria-hidden="true"
-                      viewBox="0 0 448 512"
-                      fill="var(--e-global-color-accent)"
-                      style={{ width: '13px', height: '13px' }}
+                    <a
+                      href="#contact"
+                      style={{
+                        fontSize: '13px',
+                        fontWeight: 600,
+                        color: 'var(--e-global-color-accent)',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        textDecoration: 'none',
+                      }}
                     >
-                      <path d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z" />
-                    </svg>
-                  </a>
+                      <span>Inquire About This Build</span>
+                      <span>→</span>
+                    </a>
+
+                    <a
+                      href="https://wa.me/917070717794"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: '#06FF25', fontSize: '12px', textDecoration: 'none' }}
+                    >
+                      WhatsApp
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Carousel Chevrons (elementor-swiper-button-prev & next) */}
-          <button
-            onClick={handlePrev}
-            aria-label="Previous Project"
-            className="portfolio-nav-btn prev"
-            style={{
-              position: 'absolute',
-              left: '-20px',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              width: '36px',
-              height: '36px',
-              borderRadius: '50%',
-              backgroundColor: 'var(--e-global-color-4793e6c)',
-              border: '1px solid var(--e-global-color-primary)',
-              color: 'var(--e-global-color-secondary)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-              zIndex: 2,
-              transition: 'background-color 0.2s ease, color 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--e-global-color-primary)';
-              e.currentTarget.style.color = '#FFFFFF';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--e-global-color-4793e6c)';
-              e.currentTarget.style.color = 'var(--e-global-color-secondary)';
-            }}
-          >
-            <svg viewBox="0 0 1000 1000" fill="currentColor" style={{ width: '14px', height: '14px' }}>
-              <path d="M646 125C629 125 613 133 604 142L308 442C296 454 292 471 292 487 292 504 296 521 308 533L604 854C617 867 629 875 646 875 663 875 679 871 692 858 704 846 713 829 713 812 713 796 708 779 692 767L438 487 692 225C700 217 708 204 708 187 708 171 704 154 692 142 675 129 663 125 646 125Z" />
-            </svg>
-          </button>
+          {/* Carousel Pagination & Arrow Controls */}
+          {totalPages > 1 && (
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '20px',
+                marginTop: '36px',
+              }}
+            >
+              {/* Previous Button */}
+              <button
+                type="button"
+                onClick={handlePrev}
+                aria-label="Previous portfolio page"
+                style={{
+                  backgroundColor: 'var(--e-global-color-4793e6c)',
+                  border: '1px solid var(--e-global-color-primary)',
+                  borderRadius: '50%',
+                  width: '42px',
+                  height: '42px',
+                  color: '#FFFFFF',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.25s ease',
+                  fontSize: '16px',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'var(--e-global-color-primary)';
+                  e.currentTarget.style.borderColor = 'var(--e-global-color-accent)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'var(--e-global-color-4793e6c)';
+                  e.currentTarget.style.borderColor = 'var(--e-global-color-primary)';
+                }}
+              >
+                ←
+              </button>
 
-          <button
-            onClick={handleNext}
-            aria-label="Next Project"
-            className="portfolio-nav-btn next"
-            style={{
-              position: 'absolute',
-              right: '-20px',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              width: '36px',
-              height: '36px',
-              borderRadius: '50%',
-              backgroundColor: 'var(--e-global-color-4793e6c)',
-              border: '1px solid var(--e-global-color-primary)',
-              color: 'var(--e-global-color-secondary)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-              zIndex: 2,
-              transition: 'background-color 0.2s ease, color 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--e-global-color-primary)';
-              e.currentTarget.style.color = '#FFFFFF';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--e-global-color-4793e6c)';
-              e.currentTarget.style.color = 'var(--e-global-color-secondary)';
-            }}
-          >
-            <svg viewBox="0 0 1000 1000" fill="currentColor" style={{ width: '14px', height: '14px' }}>
-              <path d="M696 533C708 521 713 504 713 487 713 471 708 454 696 446L400 146C388 133 375 125 354 125 338 125 325 129 313 142 300 154 292 171 292 187 292 204 296 221 308 233L563 492 304 771C292 783 288 800 288 817 288 833 296 850 308 863 321 871 338 875 354 875 371 875 388 867 400 854L696 533Z" />
-            </svg>
-          </button>
+              {/* Dot Indicators */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                {Array.from({ length: totalPages }).map((_, dotIdx) => (
+                  <button
+                    key={dotIdx}
+                    type="button"
+                    onClick={() => setCarouselIndex(dotIdx)}
+                    aria-label={`Go to page ${dotIdx + 1}`}
+                    style={{
+                      width: carouselIndex === dotIdx ? '24px' : '8px',
+                      height: '8px',
+                      borderRadius: '4px',
+                      border: 'none',
+                      backgroundColor: carouselIndex === dotIdx ? 'var(--e-global-color-accent)' : 'rgba(255, 255, 255, 0.2)',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      padding: 0,
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* Next Button */}
+              <button
+                type="button"
+                onClick={handleNext}
+                aria-label="Next portfolio page"
+                style={{
+                  backgroundColor: 'var(--e-global-color-4793e6c)',
+                  border: '1px solid var(--e-global-color-primary)',
+                  borderRadius: '50%',
+                  width: '42px',
+                  height: '42px',
+                  color: '#FFFFFF',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.25s ease',
+                  fontSize: '16px',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'var(--e-global-color-primary)';
+                  e.currentTarget.style.borderColor = 'var(--e-global-color-accent)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'var(--e-global-color-4793e6c)';
+                  e.currentTarget.style.borderColor = 'var(--e-global-color-primary)';
+                }}
+              >
+                →
+              </button>
+            </div>
+          )}
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 1024px) {
-          .portfolio-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-          .portfolio-nav-btn {
-            display: none !important;
-          }
-        }
-        @media (max-width: 767px) {
-          .portfolio-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }
